@@ -6,12 +6,12 @@
     <link rel="icon" href="https://www.shutterstock.com/shutterstock/photos/1147101026/display_1500/stock-vector-outstanding-professional-elegant-trendy-awesome-artistic-black-and-white-color-tj-jt-initial-based-1147101026.jpg" />"" /> <!--icon for tab-->
     <link href="lib/bootstrap/css/styles.css" rel="stylesheet" />" />"" /> 
     <link href="lib/bootstrap/css/styles.css" rel="stylesheet" />
-    <script src="lib/bootstrap/js/scripts.js"></script>
     <link href="css/default.css" rel="stylesheet" />
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">  <!--bootstrap to create header with my preferred name-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <!--bootstrap to create header with my preferred name-->
         <div class="container">
             <a class="navbar-brand" href="#page-top">Trey Jackson</a>
         </div>
@@ -57,11 +57,13 @@
         <label>Final Exam:</label>
         <input type="number" id="final" /> <br />
         <label>INTEX:</label>
-        <input type="number" id="intext" /> <br />
+        <input type="number" id="intex" /> <br />
         <p id="finalGrade"></p> <br /> <!--p tag that is populated with the calculated grade percentage and letter after funciton is called-->
-        <input type="button" id="calculate" value="Calculate Grade" /> <br /> <!-- button that connects to js file, calls the function to do grade calculation-->
+        <input type="button" id="calcGrade" value="Calculate Grade" /> <br /> <!-- button that connects to js file, calls the function to do grade calculation-->
     </form>
 
+    <script src="lib/bootstrap/js/scripts.js"></script>
     <script src="lib/jquery/jquery-3.6.3.min.js"></script>
+    <script src="js/JavaScript.js"></script>
 </body>
 </html>

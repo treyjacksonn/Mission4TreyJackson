@@ -1,21 +1,23 @@
 ﻿// function for element with id calculate, used to calculate the grade average and letter grade
-$("#calculate").click(function () {
+$("#calcGrade").click( function () {
 
-    // assigns value of the weighted average for each grade category
-    var assignment = $('#assignment').val() * .5;
-    var group = $('#group').val() * .1;
-    var quiz = $('#quizzes').val() * .1;
-    var midterm = $('#midterm').val() * .1;
-    var final = $('#final').val() * .1;
-    var intex = $('#intex').val() * .1;
+
+
+/*     assigns value of the weighted average for each grade category*/
+    var assignment = parseFloat($('#assignment').val()) * .5;
+    var group = parseFloat($('#group').val()) * .1;
+    var quiz = parseFloat($('#quizzes').val()) * .1;
+    var midterm = parseFloat($('#midterm').val()) * .1;
+    var final = parseFloat($('#final').val()) * .1;
+    var intex = parseFloat($('#intex').val()) * .1;
 
     // empty variable to hold calculated letter grade
     var grade = "";
 
 
     // calculates weighted average 
-    var weightedAvg = parseFloat(assignment) + parseFloat(group) + parseFloat(quiz) +
-        parseFloat(midterm) + parseFloat(final) + parseFloat(intex);
+    var weightedAvg = assignment + group + quiz +
+        midterm + final + intex;
 
     // if statements to determine the letter grade earned 
     if (weightedAvg >= 94) {
