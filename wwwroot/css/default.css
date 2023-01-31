@@ -1,0 +1,14 @@
+﻿body {
+    font-family:'Trebuchet MS';
+    
+}
+
+label{
+    font-size:20px;
+    width: 150px;
+    display:inline-block;
+}
+
+h1{
+    text-align:center
+}
