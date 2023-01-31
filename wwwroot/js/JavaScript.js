@@ -2,12 +2,12 @@
 $("#calculate").click(function () {
 
     // assigns value of the weighted average for each grade category
-    var assignment = $('#assign').val() * .5;
+    var assignment = $('#assignment').val() * .5;
     var group = $('#group').val() * .1;
-    var quiz = $('#quiz').val() * .1;
+    var quiz = $('#quizzes').val() * .1;
     var midterm = $('#midterm').val() * .1;
     var final = $('#final').val() * .1;
-    var intex = $('#inex').val() * .1;
+    var intex = $('#intex').val() * .1;
 
     // empty variable to hold calculated letter grade
     var grade = "";
