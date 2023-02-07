@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Trey's Grade Calculator";
+}
+
+@model gradeCalcModel; 
+
+<form method="post">
+    <!--form tag to gather info for the calculator-->
+    <label>Assignments:</label>
+    <input type="number" id="assignment" asp-for="Assignment" /> <br />
+    <label>Group Projects:</label>
+    <input type="number" id="group" asp-for="Group" /> <br />
+    <label>Quizzes:</label>
+    <input type="number" id="quizzes" asp-for="Quizzes" /> <br />
+    <label>Midterm Exam:</label>
+    <input type="number" id="midterm" asp-for="Midterm" /> <br />
+    <label>Final Exam:</label>
+    <input type="number" id="final" asp-for="Final" /> <br />
+    <label>INTEX:</label>
+    <input type="number" id="intex" asp-for="Intex" /> <br />
+    <p id="finalGrade"></p> <br /> <!--p tag that is populated with the calculated grade percentage and letter after funciton is called-->
+    <input type="submit" id="calcGrade" value="Calculate Grade" /> <br /> <!-- button that connects to js file, calls the function to do grade calculation-->
+
+
+    <!--Calls for validation of the data when submitted, shows error if validation is not met-->
+    <div asp-validation-summary="All"></div>
+</form>
+
+<script src="js/JavaScript.js"></script>
