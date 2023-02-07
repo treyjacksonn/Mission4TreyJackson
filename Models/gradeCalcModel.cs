@@ -14,7 +14,7 @@ namespace Mission4TreyJackson.Models
         // and that the data entered is between 0 and 100
 
         [Required]
-        [Range(0,100, ErrorMessage ="Please enter a number between 0 and 100 for the 'Assignment' section")]
+        [Range(0,100, ErrorMessage ="Please enter a number between 0 and 100 for the 'Assignments' section")]
         public int Assignment { get; set; }
 
         [Required]
