@@ -16,8 +16,8 @@ namespace Mission4TreyJackson.Migrations
                     Title = table.Column<string>(nullable: true),
                     Year = table.Column<int>(nullable: false),
                     Director = table.Column<string>(nullable: false),
-                    Rating = table.Column<int>(nullable: false),
-                    Edited = table.Column<int>(nullable: false),
+                    Rating = table.Column<string>(nullable: false),
+                    Edited = table.Column<string>(nullable: true),
                     LentTo = table.Column<string>(nullable: true),
                     Notes = table.Column<string>(maxLength: 25, nullable: true)
                 },
@@ -25,6 +25,21 @@ namespace Mission4TreyJackson.Migrations
                 {
                     table.PrimaryKey("PK_Movies", x => x.MovieID);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 1, "Crime/Drama", "Francis Ford Coppola", "False", "", "Greatest of all time!", "R", "The Godfather", 1972 });
+
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 2, "War/Drama", "Sam Mendes", "True", "", "Favorite War Movie", "R", "1917", 2019 });
+
+            migrationBuilder.InsertData(
+                table: "Movies",
+                columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
+                values: new object[] { 3, "Romance", "Michel Gondry", "False", "", "Favorite Romance", "R", "Eternal Sunshine of the Spotless Mind", 2004 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
