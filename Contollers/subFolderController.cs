@@ -12,6 +12,8 @@ namespace Mission4TreyJackson.Contollers
     {
 
         private readonly ILogger<subFolderController> _logger;
+
+        // makes a variable off movieEntryContext
         private movieEntryContext _movieContext { get; set; }
 
         public subFolderController(ILogger<subFolderController>logger, movieEntryContext movie)
@@ -45,6 +47,7 @@ namespace Mission4TreyJackson.Contollers
         [HttpPost]
         public IActionResult movieEntry(movieEntry ar)
         {
+            //Calls movieEntryContext variable along with ar, information passed from page, to the instance
             _movieContext.Add(ar);
             _movieContext.SaveChanges();
             return View(ar);

@@ -16,6 +16,8 @@ namespace Mission4TreyJackson.Models
 
         public DbSet<movieEntry> Movies { get;set; }
 
+
+        // populates the database with these three movies if it is empty
         protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<movieEntry>().HasData(

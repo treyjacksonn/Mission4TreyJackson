@@ -12,7 +12,7 @@
 <h1>Movie Database Entry</h1>
 
 <form method="post">
-    <!--form tag to gather info for the calculator-->
+    <!--form tag to submit to database-->
     <label asp-for="Category">Category:</label>
     <input type="text" id="category" asp-for="Category" /> <br />
 
@@ -27,6 +27,8 @@
     <label asp-for="Director">Director:</label>
     <input type="text" id="director" asp-for="Director" /> <br />
 
+
+    <!--Drop down menu for rating-->
     <label asp-for="Rating">Rating:</label>
     <select class="form-control" asp-for="Rating" id="rating">
         <option>Select Rating</option>
@@ -38,6 +40,7 @@
     <br />
 
 
+    <!--True/False options for Edited field-->
     <label asp-for="Edited">Edited:</label>
     <select class="form-control" asp-for="Edited" id="edited">
         <option>Edited?</option>
