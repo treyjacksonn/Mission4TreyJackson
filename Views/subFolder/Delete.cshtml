@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Deleting Entry";
+}
+
+@model movieEntry
+
+<link href="~/lib/bootstrap/css/styles.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<br />
+<br />
+<br />
+
+<h2>Confirm Deletion</h2>
+<h3>Are you sure you want to delete the entry for @Model.Title?</h3>
+
+<!--Post method to call for the deletion of an entry-->
+<form method="post" asp-action="Delete">
+    <button type="submit">Delete</button>
+    <a asp-controller="subFolder" asp-action="movieList" class="btn btn-primary">Cancel</a>
+
+    <!--hidden attribute to pass the MovieID to the post of the Delete Function-->
+    <input type="hidden" asp-for="MovieID"/>
+</form>

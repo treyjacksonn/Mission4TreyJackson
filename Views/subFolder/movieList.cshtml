@@ -28,10 +28,11 @@
     </thead>
 
     <tbody>
+        <!--foreach loop iterates through all the attributes in the model and displays them-->
         @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.Category</td>
+                    <td>@x.CategoryID</td>
                     <td>@x.Title</td>
                     <td>@x.Year</td>
                     <td>@x.Director</td>
@@ -39,6 +40,10 @@
                     <td>@x.Edited</td>
                     <td>@x.LentTo</td>
                     <td>@x.Notes</td>
+
+                    <!--asp-route-movieid connect the MovieID to the entry that is clicked-->
+                    <td><a asp-controller="subFolder" asp-action="Edit" asp-route-movieid ="@x.MovieID">Edit</a></td>
+                    <td><a asp-controller="subFolder" asp-action="Delete" asp-route-movieid ="@x.MovieID">Delete</a></td> 
 
                 </tr>
             }

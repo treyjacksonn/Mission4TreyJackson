@@ -15,15 +15,55 @@ namespace Mission4TreyJackson.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.32");
 
+            modelBuilder.Entity("Mission4TreyJackson.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryID = 1,
+                            CategoryName = "Drama"
+                        },
+                        new
+                        {
+                            CategoryID = 2,
+                            CategoryName = "Romance"
+                        },
+                        new
+                        {
+                            CategoryID = 3,
+                            CategoryName = "Horror"
+                        },
+                        new
+                        {
+                            CategoryID = 4,
+                            CategoryName = "Comedy"
+                        },
+                        new
+                        {
+                            CategoryID = 5,
+                            CategoryName = "Documentary"
+                        });
+                });
+
             modelBuilder.Entity("Mission4TreyJackson.Models.movieEntry", b =>
                 {
                     b.Property<int>("MovieID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -44,6 +84,7 @@ namespace Mission4TreyJackson.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Year")
@@ -51,13 +92,15 @@ namespace Mission4TreyJackson.Migrations
 
                     b.HasKey("MovieID");
 
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("movieEntry");
 
                     b.HasData(
                         new
                         {
                             MovieID = 1,
-                            Category = "Crime/Drama",
+                            CategoryID = 1,
                             Director = "Francis Ford Coppola",
                             Edited = "False",
                             LentTo = "",
@@ -69,7 +112,7 @@ namespace Mission4TreyJackson.Migrations
                         new
                         {
                             MovieID = 2,
-                            Category = "War/Drama",
+                            CategoryID = 1,
                             Director = "Sam Mendes",
                             Edited = "True",
                             LentTo = "",
@@ -81,7 +124,7 @@ namespace Mission4TreyJackson.Migrations
                         new
                         {
                             MovieID = 3,
-                            Category = "Romance",
+                            CategoryID = 2,
                             Director = "Michel Gondry",
                             Edited = "False",
                             LentTo = "",
@@ -90,6 +133,15 @@ namespace Mission4TreyJackson.Migrations
                             Title = "Eternal Sunshine of the Spotless Mind",
                             Year = 2004
                         });
+                });
+
+            modelBuilder.Entity("Mission4TreyJackson.Models.movieEntry", b =>
+                {
+                    b.HasOne("Mission4TreyJackson.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

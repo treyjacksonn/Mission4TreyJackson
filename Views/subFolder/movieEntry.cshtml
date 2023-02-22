@@ -17,9 +17,22 @@
 <h1>Movie Database Entry</h1>
 
 <form method="post">
+
+    <!--Provides validation of fields-->
+    <div asp-validation-summary="All"></div> 
+
     <!--form tag to submit to database-->
-    <label asp-for="Category">Category:</label>
-    <input type="text" id="category" asp-for="Category" /> <br />
+    <label asp-for="CategoryID">Category:</label>
+    <select asp-for="CategoryID">
+        <option value="">Select a Category</option>
+    <!--foreach loop calls the Category model-->
+        @foreach(Category c in ViewBag.Categories)
+            {
+            //loop then goes through each CategoryName in Category, the ID is connected to the selected CategoryName through the "value" syntax.
+            <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+
+    </select> <br />
 
 
     <label asp-for="Title">Title:</label>
