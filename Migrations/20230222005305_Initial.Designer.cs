@@ -8,7 +8,7 @@ using Mission4TreyJackson.Models;
 namespace Mission4TreyJackson.Migrations
 {
     [DbContext(typeof(movieEntryContext))]
-    [Migration("20230214073241_Initial")]
+    [Migration("20230222005305_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace Mission4TreyJackson.Migrations
 
                     b.HasKey("MovieID");
 
-                    b.ToTable("Movies");
+                    b.ToTable("movieEntry");
 
                     b.HasData(
                         new

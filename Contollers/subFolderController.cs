@@ -11,15 +11,15 @@ namespace Mission4TreyJackson.Contollers
     public class subFolderController : Controller
     {
 
-        private readonly ILogger<subFolderController> _logger;
+       
 
         // makes a variable off movieEntryContext
-        private movieEntryContext _movieContext { get; set; }
+        private movieEntryContext MovieContext { get; set; }
 
-        public subFolderController(ILogger<subFolderController>logger, movieEntryContext movie)
+        public subFolderController(movieEntryContext movie)
         {
-            _logger = logger;
-            _movieContext = movie;
+         
+            MovieContext = movie;
 
         }
         public IActionResult Index()
@@ -48,9 +48,15 @@ namespace Mission4TreyJackson.Contollers
         public IActionResult movieEntry(movieEntry ar)
         {
             //Calls movieEntryContext variable along with ar, information passed from page, to the instance
-            _movieContext.Add(ar);
-            _movieContext.SaveChanges();
+            MovieContext.Add(ar);
+            MovieContext.SaveChanges();
             return View(ar);
         }
+
+        public IActionResult movieList()
+        {
+            var movies = MovieContext.movieEntry.ToList();
+            return View(movies);
+        } 
     }
 }

@@ -51,7 +51,7 @@ namespace Mission4TreyJackson.Migrations
 
                     b.HasKey("MovieID");
 
-                    b.ToTable("Movies");
+                    b.ToTable("movieEntry");
 
                     b.HasData(
                         new

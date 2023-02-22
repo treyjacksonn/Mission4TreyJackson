@@ -7,7 +7,7 @@ namespace Mission4TreyJackson.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Movies",
+                name: "movieEntry",
                 columns: table => new
                 {
                     MovieID = table.Column<int>(nullable: false)
@@ -23,21 +23,21 @@ namespace Mission4TreyJackson.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movies", x => x.MovieID);
+                    table.PrimaryKey("PK_movieEntry", x => x.MovieID);
                 });
 
             migrationBuilder.InsertData(
-                table: "Movies",
+                table: "movieEntry",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 1, "Crime/Drama", "Francis Ford Coppola", "False", "", "Greatest of all time!", "R", "The Godfather", 1972 });
 
             migrationBuilder.InsertData(
-                table: "Movies",
+                table: "movieEntry",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 2, "War/Drama", "Sam Mendes", "True", "", "Favorite War Movie", "R", "1917", 2019 });
 
             migrationBuilder.InsertData(
-                table: "Movies",
+                table: "movieEntry",
                 columns: new[] { "MovieID", "Category", "Director", "Edited", "LentTo", "Notes", "Rating", "Title", "Year" },
                 values: new object[] { 3, "Romance", "Michel Gondry", "False", "", "Favorite Romance", "R", "Eternal Sunshine of the Spotless Mind", 2004 });
         }
@@ -45,7 +45,7 @@ namespace Mission4TreyJackson.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Movies");
+                name: "movieEntry");
         }
     }
 }

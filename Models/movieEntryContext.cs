@@ -11,10 +11,10 @@ namespace Mission4TreyJackson.Models
         // constructor
        public movieEntryContext(DbContextOptions<movieEntryContext> options) : base(options) { 
         
-        
+         
         }
 
-        public DbSet<movieEntry> Movies { get;set; }
+        public DbSet<movieEntry> movieEntry { get;set; }
 
 
         // populates the database with these three movies if it is empty
